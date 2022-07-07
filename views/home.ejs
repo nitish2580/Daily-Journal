@@ -1,0 +1,18 @@
+<%- include("partials/header")-%> 
+    <h1>Home</h1>
+    <p><%= homeStartingContent %> </p>
+
+    <!-- <% for(let i=0;i<storePosts.length;i++){%>
+
+    <% }  %> -->
+    <% storePosts.forEach(function(elements){ %>
+        <h1><%= elements.title %> </h1>
+        <% if(elements.body.length>100){%> 
+        <p><%= elements.body.substring(0,100) + "..." %>
+            <a href="/posts/<%= elements.title  %> ">Read More</a> </p>
+        <% }else{ %> 
+            <p><%=elements.body  %> </p>
+        <% } %> 
+
+    <% })%> 
+<%- include("partials/footer") -%>
